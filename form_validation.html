@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Validation</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Form Validation</legend>
+    <form name="myForm" method="post" onSubmit="myFunction();">
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>
+                    <input type="text" name="name" id="name" placeholder="name">
+                    <span id="myName" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>
+                    <input type="Email" name="Email" id="Email" placeholder="Email">
+                    <span id="myEmail" style="color:red"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td>
+                    <input type="Number" name="phone" id="phone" placeholder="phone">
+                </td>
+            </tr>
+            <tr>
+                <th>Date of Birth:</th>
+                <td>
+                    <input type="Date" name="date" id="date" placeholder="date">
+                </td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>
+                    <input type="radio" name="gender" id="gender" placeholder="gender">Male
+                    <input type="radio" name="gender" id="gender" placeholder="gender">Female
+                    <input type="radio" name="gender" id="gender" placeholder="gender">Other
+                </td>
+            </tr>
+            <tr>
+                <th>Education:</th>
+                <td>
+                    <input type="Checkbox" name="check" id="check" value="Education">SSc
+                    <input type="Checkbox" name="check" id="check" value="Education">HSc
+                    <input type="Checkbox" name="check" id="check" value="Education">Diploma
+                    <input type="Checkbox" name="check" id="check" value="Education">BSc
+                </td>
+            </tr>
+            <tr>
+                <th>Division:</th>
+                <td>
+                <select name="division" id="division">
+                    <option value="choose option" active>Choose Option</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Cumilla">Cumilla</option>
+                    <option value="Chandpur">Chandpur</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Short Description:</th>
+                <td>
+                    <textarea name="description"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="button" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</fieldset>
+<script>
+    function myFunction(){
+        var name=document.myForm.name.value;
+        var email=document.myForm.Email.value;
+        var phone=document.myForm.phone.value
+        var date=document.myForm.date.value
+        var gender=document.myForm.gender.value
+        var education=document.myForm.check.value
+        var division=document.myForm.division.value
+        var description=document.myForm.description.value 
+        
+        if(name=="" || email==""){
+            if(name==""){
+                var name=document.getElementById("myName").innerHTML="please enter your name"
+            }
+            if(email==""){
+                var email=document.getElementById("myEmail").innerHTML="please enter your email"
+            }
+            }
+            else{
+            var myWindow=open('','PWAD-R51','toolbar=no', width=800, height=400)
+            myWindow.document.write("Name: "+name+"<br>"+"Email: "+email+"<br>"+"Date of Birth: "+date+"<br>"+"Phone: "+phone+"<br>"+"gender: "+gender+"<br>"+"Education: "+education+"<br>"+"Division:"+division+"<br>"+"Description"+description)
+            }
+        }
+</script>
+</body>
+</html>

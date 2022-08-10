@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+</head>
+<body>
+    <!-- <script>
+        var name =prompt("enter your name"," ")
+        document.write("Wellcome to PWAD"+" "+name)
+    </script> -->
+    <!-- <script>
+        function myfunction(){
+            var value1=parseInt(prompt("Enter value", ""))
+            var value2=parseFloat(prompt("Enter value", ""));
+            var add_value=value1+value2;//addition
+            var subtract_value=value1-value2;//subtraction
+            var mul_value=value1*value2;//multiplication
+            document.write("add value:"+add_value+"<br>");
+            document.write(" subtract value:"+subtract_value+"<br>");
+            document.write("Multiple value:"+mul_value+"<br>");
+        }
+        myfunction();
+    </script> -->
+    <script>
+        var qty=parseInt(prompt("Enter Quantity value:", ""));
+        var unitprice=parseInt(prompt("Enter unitprice Value:", ""));
+        var discount_parcent=parseInt(prompt("Enter discount:", ""));
+        var total_price=qty*unitprice;
+        var discount=(total_price*discount_parcent)/
+        100;
+        
+        var grandTotal=total_price-discount;
+        document.write("total_price:"+total_price+"<br>");
+        document.write("discount:"+discount+"<br>");
+        document.write("grandTotal:"+grandTotal+"<br>");
+    </script>
+</body>
+</html>

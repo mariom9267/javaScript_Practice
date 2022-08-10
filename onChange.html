@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onChange</title>
+</head>
+<body>
+   
+        <form name="myForm" onChange="myPrice()" style="width:80%">
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product price</th>
+                    <th>Quantity</th>
+                    <th>totalPrice</th>
+                    <th>discount</th>
+                    <th>discountAmount</th>
+                    <th>subTotal</th>
+                    <th>vat(%)</th>
+                    <th>vatAmount</th>
+                    <th>grandTotal</th>
+                    </tr>
+                    <tr>
+
+                    <td><select name="fruits" onChange="myPrice()">
+                        <option value="">Chose option</option>
+                        <option value="100">Mango</option>
+                        <option value="200">Apple</option>
+                        <option value="200">Apple</option>
+                    </select></td>
+
+
+                                <td>
+                                    <input type="text" name="product_price" id="product_price"></td>
+                                <td>
+                                    <input type="text" name="quantity" id="quantity" />
+                                    </td>
+                                <td>
+                                    <input type="text" name="totalPrice" id="price" value=""/>
+                                </td>
+
+                                <td>
+                                    <input type="text" name="discount" value="" />
+                                </td>
+                                <td>
+                                    <input type="text" name="discountAmount" id="amount" value="" />
+                                </td>
+                                <td>
+                                    <input type="text" name="subTotal" id="subTotal" value="" />
+                                </td>
+                                <td>
+                                    <input type="text" name="vat" id="vat" value="" />
+                                </td>
+                                <td>
+                                    <input type="text" name="vatAmount" id="vatAmount" value="" />
+                                </td>
+                                <td>
+                                    <input type="text" name="grandTotal" id="grandTotal" value="" />
+                                </td>
+
+                        </tr>
+                </table>
+            </form>
+            <script>
+                function myPrice(){
+                    var product_name=document.myForm.fruits.value
+                    document.getElementById('product_price').value=product_name;
+
+                    var product_price=document.myForm.product_price.value;
+                    var quantity=document.myForm.quantity.value;
+                    var totalPrice=product_price*quantity
+                    document.getElementById("price").value=totalPrice
+
+                    var discount=document.myForm.discount.value
+                    var discountAmount=(totalPrice*discount)/100
+                    document.getElementById('amount').value=discountAmount
+
+                    var subTotal=totalPrice-discountAmount
+                    document.getElementById('subTotal').value=subTotal
+
+                    var vat = document.myForm.vat.value;
+                    var vatAmount=(totalPrice*vat)/100;
+                    document.getElementById('vatAmount').value=vatAmount
+                   
+                  var total=document.myForm.grandTotal.value;
+                  var grandTotal=subTotal+vatAmount;
+                  document.getElementById('grandTotal').value=grandTotal
+                }
+    </script>
+</body>
+</html>

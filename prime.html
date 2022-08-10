@@ -1,0 +1,126 @@
+    <!doctype html>
+    <html>
+    <head>
+    <meta charset="utf-8">
+    <title>Form Heierarchy Of Objects in Javascript</title>
+    </head>
+
+    <body>
+        <form name="myForm" method="post" onSubmit="myWindow();return false">
+            <table>
+            <tr><th>Full Name</th>
+                <td>
+                    <input type="text" name="fullname" id="fullname" />
+                    <span id="fu" style="color:red"></span>
+                </td>
+                </tr>
+                <tr><th>Email</th>
+                <td>
+                    <input type="email" name="memail" id="email" />
+                    <span id="eml" style="color:red"></span>
+                </td>
+                </tr>
+                <tr><th>Division</th>
+                <td>
+                    <select name="division">
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Khulna">Khulna</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <th>Gender</th>
+                <td>Male<input type="radio" name="gender" value="male" />Female<input type="radio" name="gender" value="female" /></td>	
+                </tr>
+                <tr>
+                <th>Education</th>
+                <td>Diploma<input type="checkbox" name="diploma" id="diploma"  value="diploma"/>BSC<input type="checkbox" name="bsc" value="BSC" id="bsc"/></td>	
+                </tr>
+                <tr>
+                <td>
+                    <input type="submit" name="save"  value="save"/></td>
+                    
+                </tr>
+            </table>
+        
+        
+        </form>
+        
+        <script type="text/javascript">
+        function myWindow(){
+            var name=document.myForm.fullname.value;
+            var myEmail=document.myForm.memail.value;
+            var div=document.myForm.division.value;
+            var gender=document.myForm.gender.value;
+            var diploma=document.myForm.diploma.value;
+            var bsc=document.myForm.bsc.value;
+            var diploma_check=document.getElementById('diploma').checked;
+            var bsc_check=document.getElementById('bsc').checked;
+            
+            if(name=='' || myEmail==''){
+                
+                if(name==''){
+                    var myname=document.getElementById('fu').innerHTML="Please enter your name";
+                }
+
+
+                if(myEmail==''){
+                    var email=document.getElementById('eml').innerHTML="Please enter your email"
+                }
+                
+            }
+            
+            
+            else{
+                if(name && myEmail && div && gender && diploma_check && bsc_check){
+            
+                var awindow=open('','PWAD-R51','toolbar=no,width=400,height=400');
+
+                awindow.document.write("Name:"+name+"<br/>"+"Email:"+myEmail+"<br/> Division:"+div+"<br/>Gender:"+gender+"<br/>Education:"+bsc+" "+diploma);
+                }
+
+                
+
+            else if(name && myEmail && div && gender && diploma_check){
+            
+            var awindow=open('','PWAD-R51','toolbar=no,width=400,height=400');
+            awindow.document.write("Name:"+name+"<br/>"+"Email:"+myEmail+"<br/> Division:"+div+"<br/>Gender:"+gender+"<br/>Education:"+diploma);
+            
+            }
+            
+            
+            else if(name && myEmail && div && gender && bsc_check){
+            
+            var awindow=open('','PWAD-R51','toolbar=no,width=400,height=400');
+            awindow.document.write("Name:"+name+"<br/>"+"Email:"+myEmail+"<br/> Division:"+div+"<br/>Gender:"+gender+"<br/>Education:"+bsc);
+            
+            }
+        
+        
+        else{
+            var awindow=open('','PWAD-R51','toolbar=no,width=400,height=400');
+            awindow.document.write("Name:"+name+"<br/>"+"Email:"+myEmail+"<br/> Division:"+div+"<br/>Gender:"+gender+"<br/>Education:");
+        }
+            
+        }
+        }
+
+    //		function myWindow(){
+    //		var myEmail=window.document.myForm.memail.value;
+    //		window.document.write(myEmail);
+    //			}
+            
+        </script>
+
+<script>
+    function validEmail(){
+        var format =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+        var email=document.myForm.email.value;
+        if(format.test(email)){
+            document.getElementById('em')
+        }
+    }
+</script>
+    </body>
+    </html>

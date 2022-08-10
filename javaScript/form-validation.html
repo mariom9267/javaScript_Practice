@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Validation</title>
+</head>
+<body>
+    <form name="myForm" method="post" onSubmit="myFunction();">
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td>
+                    <input type="text" name="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>
+                    <input type="email" name="email" id="email">
+                </td>
+            </tr>
+            <tr>
+                <th>phone:</th>
+                <td>
+                    <input type="number" name="phone" id="phone">
+                </td>
+            </tr>
+            <tr>
+                <th>Date of Birth:</th>
+                <td>
+                    <input type="date" name="date" id="date">
+                </td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>
+                    <input type="radio" name="gender" id="gender">Male
+                    <input type="radio" name="gender" id="gender">Female
+                    <input type="radio" name="gender" id="gender">Other
+                </td>
+            </tr>
+            <tr>
+                <th>Education:</th>
+                <td>
+                    <input type="Checkbox" name="check" id="check" value="SSc">SSc
+                    <input type="Checkbox" name="check" id="check" value="Education">HSc
+                    <input type="Checkbox" name="check" id="check" value="Education">Diploma
+                    <input type="Checkbox" name="check" id="check" value="Education">BSc
+                </td>
+            </tr>
+            <tr>
+                <th>Division:</th>
+                <td>
+                    <select name="division" id="division">
+                        <option value="chose option">Choose Option</option>
+                        <option value="Cumilla">Cumilla</option>
+                        <option value="chandpur">Chandpur</option>
+                        <option value="Manikgonj">Manikgonj</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Save" >
+                </td>
+            </tr>
+        </table>
+        </form>
+        <script type="text/javascript">
+            function myFunction(){
+                var name=document.myForm.name.value;
+                var email=document.myForm.email.value;
+                var phone=document.myForm.phone.value;
+                var date=document.myForm.date.value;
+                var gender=document.myForm.gender.value;
+                var education=document.myForm.check.value;
+                var division=document.myForm.division.value;
+                if(name=="" || email==""){
+                    if (name==""){
+                        var name=document.getElementById("name").innerHTML="Please enter Your Name";
+                    }
+                if(email==""){
+                    var email=document.getElementById("email").innerHTML="Please enter your email";
+                }
+            }
+            else{
+                var fomValid=open('','No-IDEA','toolbar=no', width=800, height=400)
+                fomValid.document.write("Name: "+name+"<br>"+"email: "+email+"<br>"+"phone: "+phone+"<br>"+"Date of Birth:"+date+"<br>"+"Gender:"+gender+"<br>"+"Education: "+education+"<br>"+"division: "+division)
+            }
+        }
+        </script>
+</body>
+</html>

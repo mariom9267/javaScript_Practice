@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation2</title>
+</head>
+<body>
+        <form name="myForm"method="post" onSubmit=" myFunction()">
+            <table>
+                <tr><th>Name:</th>
+                    <td>
+                        <input type="text" name="name" value="">
+                        <span id="na"></span>
+                    </td><br><br>
+                </tr>
+                    <th>Email:</th>
+                    <td>
+                        <input type="email" name="email" value="">
+                        <span id="em"></span>
+                    </td> 
+                </tr>
+                <tr>
+                    <th>Phone:</th>
+                    <td>
+                        <input type="number" name="phone" value="phone">
+                        <span id="ph"></span>
+                    </td>
+                </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                </td>
+            </tr> 
+            <tr>
+                <th>Marital Status:</th>
+                <td>
+                    <input type="radio" name="marital" value="Married">Married
+                    <input type="radio" name="marital" value="Unmarried">Unmarried
+                </td>
+            </tr> 
+            <tr>
+                <th>Education</th>
+                <td>SSc<input type="checkbox" name="ssc" id="ssc"  value="ssc"/>
+                Diploma<input type="checkbox" name="diploma" id="diploma"  value="diploma"/>
+                BSC<input type="checkbox" name="bsc" value="BSC" id="bsc"/></td>	
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td>
+                    <select name="address">
+                            <option value="">Chose Option</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chandpur">Chandpur</option>
+                            <option value="Savar">Savar</option>
+                    </select>  
+                    </td>
+                </tr>
+                <tr>
+                <th>Description:</th>
+                <td>
+                    <textarea id="description" name="description" value=""></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit" name="button"></td>
+                
+            </tr>
+            </table>
+        </form>
+
+<script>
+            function myFunction(){
+                var name=document.myForm.name.value;
+                var email=document.myForm.email.value;
+                var phone=document.myForm.phone.value;
+                var gender=document.myForm.gender.value;
+                var marital=document.myForm.marital.value;
+                var address=document.myForm.address.value;
+                var ssc=document.myForm.ssc.value;
+                var diploma=document.myForm.diploma.value;
+                var bsc=document.myForm.bsc.value;
+
+                var ssc_check=document.getElementById('ssc').checked;
+                var diploma_check=document.getElementById('diploma').checked;
+                var bsc_check=document.getElementById('bsc').checked;
+/*-----------------using condintion------------------*/
+            if(name=='' || email=='' || phone=='') {
+            if(name==''){
+                var name=document.getElementById('na').innerHTML="Please enter your name";
+            }
+            if(email==''){
+                var name=document.getElementById('em').innerHTML="Please enter your email";
+            }
+            else if(!validateEmail(email.value)){
+                showerror(" email is not valid")
+            }
+            if(phone==''){
+                var name=document.getElementById('ph').innerHTML="Please enter your phone";
+            }
+
+            }
+
+            else{
+                if(name && email&& phone && marital && gender && address && ssc_check && diploma_check && bsc_check){
+
+                    var display=open('', 'mari', 'toolbar=no , width=400,height=400');
+
+                    display.document.write("Name: "+name+"<br>"+"Email:"+email+"<br>"+"Phone:"+phone+"<br>"+"Mrital status:"+marital+"<br>"+"Address:"+address+"<br>"+"Gender:"+gender+"<br>"+"Education:"+ssc+" "+diploma+" "+bsc );
+
+                }
+          
+                else if(name && email&& phone && marital && gender && address && ssc_check){
+
+                    var display=open('', 'mari', 'toolbar=no , width=400,height=400');
+
+                    display.document.write("Name: "+name+"<br>"+"Email:"+email+"<br>"+"Phone:"+phone+"<br>"+"Mrital status:"+marital+"<br>"+"Address:"+address+"<br>"+"Gender:"+gender+"<br>"+"Education:"+ssc);
+
+                }
+          
+                else if(name && email&& phone && marital && gender && address && diploma_check){
+
+                    var display=open('', 'mari', 'toolbar=no , width=400,height=400');
+
+                    display.document.write("Name: "+name+"<br>"+"Email:"+email+"<br>"+"Phone:"+phone+"<br>"+"Mrital status:"+marital+"<br>"+"Address:"+address+"<br>"+"Gender:"+gender+"<br>"+"Education:"+diploma);
+
+                }
+                else if(name && email&& phone && marital && gender && address && bsc_check){
+
+                    var display=open('', 'mari', 'toolbar=no , width=400,height=400');
+
+                    display.document.write("Name: "+name+"<br>"+"Email:"+email+"<br>"+"Phone:"+phone+"<br>"+"Mrital status:"+marital+"<br>"+"Address:"+address+"<br>"+"Gender:"+gender+"<br>"+"Education:"+bsc);
+
+                }
+                else {
+                var display=open('', 'mari', 'toolbar=no , width=400,height=400');
+
+                display.document.write("Name: "+name+"<br>"+"Email:"+email+"<br>"+"Phone:"+phone+"<br>"+"Mrital status:"+marital+"<br>"+"Address:"+address+"<br>"+"Gender:"+gender+"<br>"+"Education:");
+                        }
+            }
+
+            }
+            </script>
+
+
+<script>
+ function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+</script>
+
+
+	
+    </body>
+    </html>

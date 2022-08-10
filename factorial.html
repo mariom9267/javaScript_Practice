@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Number</title>
+</head>
+<body>
+    <script>
+        // var x=parseInt(prompt("Enter  a integer value: "))
+        // if(x<0){
+        //     document.write("Error")
+        // }
+        // else if(x===0){
+        //     document.write("1")
+        // }
+        // else{
+        //     y=1;
+        //     for(i=1; i<=x;i++){
+        //         y=y*i;
+        //         document.write("<br>"+y)
+        //     }
+        // }
+let x=10;
+let string ="";
+for( let i=1; i<=x;i++){
+    for(let j=0;j<x-i;j++){
+    string+=" ";
+    }
+    for(let k=0;k<i;k++){
+    string+=" * "
+    }
+    string+="<br>"
+}
+document.write(string)
+</script>
+</body>
+</html>
